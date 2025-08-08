@@ -28,7 +28,7 @@ server with Node.js.
 ## Example Usage
 
 ```js
-const https = require('https');
+const https = require('node:https');
 const pem = require('@metcoder95/https-pem');
 
 const server = https.createServer(pem, function (req, res) {
@@ -62,6 +62,36 @@ self-signed certificate, use the `-k` option:
 
 ```
 curl -k https://localhost:443
+```
+
+If you want to use the `fetch` API with the self-signed certificate, you can do so by using the `undici` package:
+
+```js
+const https = require('node:https');
+const { Agent } = require('undici');
+const pem = require('@metcoder95/https-pem');
+
+const agent = new Agent({
+  connect: {
+    rejectUnauthorized: false,
+  },
+});
+
+const server = https.createServer(pem, function (req, res) {
+  res.end('This is served over HTTPS with fetch');
+});
+
+server.listen(443, function () {
+  console.log('The server is running on https://localhost');
+  fetch('https://localhost', { dispatcher: agent })
+    .then((res) => res.text())
+    .then((body) => {
+      console.log('Response from server:', body);
+    })
+    .catch((err) => {
+      console.error('Error fetching from server:', err);
+    });
+});
 ```
 
 ## API
