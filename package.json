@@ -11,7 +11,8 @@
     "lint": "standard",
     "lint:ci": "standard | snazzy",
     "test": "node tests/index.js",
-    "test:ts": "tsd"
+    "test:ts": "tsd",
+    "release": "standard-version --no-verify"
   },
   "repository": {
     "type": "git",
@@ -54,6 +55,7 @@
     "@types/node": "^24.2.0",
     "snazzy": "^9.0.0",
     "standard": "^17.0.0",
+    "standard-version": "^9.5.0",
     "tsd": "^0.33.0",
     "typescript": "^5.9.2",
     "undici": "^7.13.0"
