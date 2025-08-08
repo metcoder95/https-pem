@@ -35,7 +35,6 @@ test('https-pem (default)', async t => {
 
 test('https-pem (generate)', async t => {
   const pem = require('..')
-
   const pems = await pem.generate({
     attr: [{ name: 'commonName', value: 'localhost' }],
     opts: { keySize: 5120 }

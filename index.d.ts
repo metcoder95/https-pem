@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { SelfsignedOptions, CertificateField } from 'selfsigned';
 
 type CertificateAttribute = CertificateField;

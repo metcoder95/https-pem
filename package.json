@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/watson/https-pem.git"
+    "url": "git+https://github.com/metcoder95/https-pem.git"
   },
   "engines": {
     "node": ">=20"
@@ -35,15 +35,23 @@
     "server"
   ],
   "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
+  "contributors": [
+    {
+      "name": "Carlos Fuentes",
+      "email": "me@metcoder.dev",
+      "url": "https://bsky.app/profile/metcoder.dev"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/watson/https-pem/issues"
+    "url": "https://github.com/metcoder95/https-pem/issues"
   },
-  "homepage": "https://github.com/watson/https-pem#readme",
+  "homepage": "https://github.com/metcoder95/https-pem#readme",
   "dependencies": {
     "selfsigned": "^3.0.1"
   },
   "devDependencies": {
+    "@types/node": "^24.2.0",
     "snazzy": "^9.0.0",
     "standard": "^17.0.0",
     "tsd": "^0.33.0",
