@@ -3,7 +3,7 @@
 const path = require('node:path')
 const fs = require('node:fs')
 
-let selfsigned
+let generator
 const keyPath = path.join(__dirname, 'key.pem')
 const certPath = path.join(__dirname, 'cert.pem')
 
@@ -25,7 +25,7 @@ function generate ({ attr, opts } = { attr: [], opts: null }, done) {
     return promise
   }
 
-  if (!selfsigned) selfsigned = require('selfsigned')
+  if (!generator) generator = require('./generate')
 
-  selfsigned.generate(attr, opts, done)
+  generator.generate(attr, opts, done)
 }
