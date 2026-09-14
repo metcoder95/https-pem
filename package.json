@@ -1,6 +1,6 @@
 {
   "name": "@metcoder95/https-pem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Self-signed PEM key and certificate ready for use in your HTTPS server (fork from https-pem)",
   "main": "index.js",
   "types": "index.d.ts",
